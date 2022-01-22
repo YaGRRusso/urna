@@ -25,12 +25,24 @@ body {
   align-items: center;
   height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
+  flex-direction: column;
+  overflow-y: hidden;
+}
+
+.urnaFundo {
+  width: 890px;
+  height: 100px;
+  background: var(--primary);
+  transform: perspective(10px) rotateX(1deg);
+  margin-bottom: 7px;
+  box-shadow: -3px -3px 8px rgba(0, 0, 0, 0.5);
 }
 
 .urna {
   background-color: var(--primary);
   padding: 30px;
   display: flex;
+  box-shadow: -3px -5px 8px rgba(0, 0, 0, 0.5);
 }
 
 .tela {
@@ -58,6 +70,11 @@ body {
   height: 50px;
   display: flex;
   align-items: center;
+  font-weight: bold;
+}
+
+.d1-1 span {
+  display: none;
 }
 
 .d1-2 {
@@ -68,28 +85,31 @@ body {
 }
 
 .d1-3 {
+  display: flex;
   height: 50px;
 }
 
 .numero {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 30px;
   height: 40px;
   border: 1px solid #000;
-  text-align: center;
-  line-height: 40px;
   font-size: 25px;
 }
 
 .pisca {
   animation-name: pisca;
-  animation-duration: 1s;
+  animation-duration: 1.2s;
   animation-iteration-count: infinite;
 }
 
 .d1-4 {
   flex: 1;
-  line-height: 1.8;
+  line-height: 2;
+  display: flex;
+  align-items: center;
 }
 
 .d1--right {
@@ -116,6 +136,7 @@ body {
 }
 
 .d2 {
+  display: none;
   padding: 5px 10px;
   font-size: 14px;
   border-top: 2px solid #000;
@@ -143,6 +164,7 @@ body {
   padding-left: 10px;
   border-radius: 3px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 }
 
 .teclado--botao.zero {
@@ -167,6 +189,7 @@ body {
   line-height: 1.8;
   border-radius: 3px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 }
 
 .teclado--botao-especial.branco {
@@ -183,7 +206,31 @@ body {
   background-color: green;
 }
 
-@media (max-width: 879px) {
+.aviso--grande {
+  font-size: 40px;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+}
+
+.aviso--gigante {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 120px;
+  font-weight: bold;
+}
+
+@media (max-width: 980px) {
+  body {
+    margin: 100px 0;
+  }
+
+  .urnaFundo {
+    display: none;
+  }
+
   .urna {
     flex-direction: column;
   }
